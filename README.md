@@ -58,3 +58,8 @@ pip install -r requirements.txt
 
 # 4. Run the Jupyter Notebook or Python Script
 python churn_prediction.py
+👤 Author: Matheus Thiago Paes de Barros
+
+📫 LinkedIn: linkedin.com/in/matheus-thiago-paes-de-barros-638b5b175
+
+💻 GitHub: github.com/matheuspaes777
