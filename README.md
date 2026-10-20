@@ -1,30 +1,60 @@
-# 📊 Telco Customer Churn Prediction & Analysis
+# 📉 Telco Customer Churn Prediction & Analytics
 
-## 🎯 Business Problem
-Customer retention is one of the most critical metrics for any subscription-based business. The objective of this project is to analyze a telecommunications dataset, identify the main drivers of customer churn, and build a Machine Learning model capable of predicting which customers are most likely to cancel their services in the near future.
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
 
-## 🛠️ Tools & Technologies
-* **Language:** Python
-* **Data Manipulation:** Pandas, NumPy
-* **Data Visualization:** Matplotlib, Seaborn
-* **Machine Learning:** Scikit-learn (Random Forest Classifier)
+## 📌 Overview & Business Context
+Customer retention is one of the most critical metrics for telecom and SaaS companies. Acquiring a new customer can cost up to **5x more** than retaining an existing one. 
 
-## 📈 Key Business Insights (EDA)
-1. **Contract Type is Crucial:** Customers with `Month-to-month` contracts have a drastically higher churn rate compared to those with 1-year or 2-year contracts.
-2. **Financial Burden:** The density of churn increases significantly as `MonthlyCharges` go up, suggesting price sensitivity or strong competition in premium tiers.
-3. **Lack of Support Services:** Customers who do not have `TechSupport` or `OnlineSecurity` are far more likely to leave the ecosystem.
+This project delivers an end-to-end Machine Learning pipeline to predict customer churn, identify key risk indicators, and provide actionable business recommendations to reduce customer attrition.
 
-## 🤖 Machine Learning Model
-A **Random Forest Classifier** was trained to predict the probability of a customer leaving. 
-* **Data Preprocessing:** Handled missing values (blank strings in `TotalCharges`), applied One-Hot Encoding (`pd.get_dummies`), and split the data into 80/20 train-test sets.
-* **Top Predictive Features:** According to the model's feature importance, the primary indicators of churn are:
-  1. Total Charges
-  2. Monthly Charges
-  3. Tenure (Months as a customer)
-  4. Contract Type (Month-to-month)
-  5. Internet Service Type (Fiber Optic)
+---
 
-## 💡 Strategic Recommendations for the Company
-* **Incentivize Long-Term Contracts:** Offer discounts or upgrades to transition month-to-month users into annual plans.
-* **Proactive Engagement:** Implement targeted retention campaigns for users passing the 70 USD monthly charge threshold.
-* **Value-Add Services:** Bundle Tech Support into base packages for the first 3 months to increase platform stickiness.
+## 🛠️ Tech Stack & Libraries
+- **Language:** Python 3.10+
+- **Data Manipulation:** Pandas, NumPy
+- **Data Visualization:** Seaborn, Matplotlib
+- **Machine Learning:** Scikit-Learn (Random Forest Classifier)
+- **Evaluation Metrics:** Precision, Recall, F1-Score, ROC-AUC
+
+---
+
+## 🚀 Key Project Steps
+
+1. **Data Cleaning & Preprocessing:**
+   - Handled missing and blank values in structural columns (`TotalCharges`).
+   - Feature Engineering and categorical encoding using `pd.get_dummies()` with `drop_first=True` to avoid multicollinearity.
+
+2. **Exploratory Data Analysis (EDA):**
+   - Identified that month-to-month contracts and lack of tech support are the top churn drivers.
+   - Tenure analysis revealed that customers are most vulnerable within their first 12 months.
+
+3. **Machine Learning Modeling:**
+   - Split dataset into **80% Training / 20% Testing**.
+   - Trained a **Random Forest Classifier** with tuned hyper-parameters (`max_depth=8`) to prevent overfitting.
+   - Evaluated model using classification metrics with a strong focus on **Recall** (minimizing false negatives).
+
+---
+
+## 📊 Key Results & Business Insights
+- **Top Risk Factors:** Month-to-month contract type, Fiber optic internet service, and Electronic check payment method.
+- **Actionable Advice:** Incentivize long-term contract switching (annual plans) by offering discounts on tech support packages during the first 6 months.
+
+---
+
+## 💻 How to Run This Project
+
+```bash
+# 1. Clone the repository
+git clone [https://github.com/matheuspaes777/telco-customer-churn-prediction.git](https://github.com/matheuspaes777/telco-customer-churn-prediction.git)
+
+# 2. Navigate to the project directory
+cd telco-customer-churn-prediction
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the Jupyter Notebook or Python Script
+python churn_prediction.py
